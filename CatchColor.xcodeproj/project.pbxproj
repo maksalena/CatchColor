@@ -12,9 +12,13 @@
 		CA72B4F32CA030460035CAC3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CA72B4F22CA030460035CAC3 /* Actions.sks */; };
 		CA72B4F52CA030460035CAC3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B4F42CA030460035CAC3 /* GameScene.swift */; };
 		CA72B4F72CA030460035CAC3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B4F62CA030460035CAC3 /* GameViewController.swift */; };
-		CA72B4FA2CA030460035CAC3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA72B4F92CA030460035CAC3 /* Base */; };
 		CA72B4FC2CA030470035CAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA72B4FB2CA030470035CAC3 /* Assets.xcassets */; };
 		CA72B4FF2CA030470035CAC3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA72B4FE2CA030470035CAC3 /* Base */; };
+		CA72B5062CA078120035CAC3 /* bonus_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA72B5052CA078120035CAC3 /* bonus_sound.mp3 */; };
+		CA72B5082CA078170035CAC3 /* game_over_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA72B5072CA078170035CAC3 /* game_over_sound.mp3 */; };
+		CA72B50A2CA0781B0035CAC3 /* error_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */; };
+		CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */; };
+		CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +28,13 @@
 		CA72B4F22CA030460035CAC3 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		CA72B4F42CA030460035CAC3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		CA72B4F62CA030460035CAC3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		CA72B4F92CA030460035CAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA72B4FB2CA030470035CAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA72B4FE2CA030470035CAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA72B5052CA078120035CAC3 /* bonus_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bonus_sound.mp3; path = ../../../Downloads/bonus_sound.mp3; sourceTree = "<group>"; };
+		CA72B5072CA078170035CAC3 /* game_over_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_over_sound.mp3; path = ../../../Downloads/game_over_sound.mp3; sourceTree = "<group>"; };
+		CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = error_sound.mp3; path = ../../../Downloads/error_sound.mp3; sourceTree = "<group>"; };
+		CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +67,18 @@
 		CA72B4ED2CA030460035CAC3 /* CatchColor */ = {
 			isa = PBXGroup;
 			children = (
+				CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */,
+				CA72B5072CA078170035CAC3 /* game_over_sound.mp3 */,
+				CA72B5052CA078120035CAC3 /* bonus_sound.mp3 */,
 				CA72B4EE2CA030460035CAC3 /* AppDelegate.swift */,
 				CA72B4F02CA030460035CAC3 /* GameScene.sks */,
 				CA72B4F22CA030460035CAC3 /* Actions.sks */,
 				CA72B4F42CA030460035CAC3 /* GameScene.swift */,
 				CA72B4F62CA030460035CAC3 /* GameViewController.swift */,
-				CA72B4F82CA030460035CAC3 /* Main.storyboard */,
 				CA72B4FB2CA030470035CAC3 /* Assets.xcassets */,
 				CA72B4FD2CA030470035CAC3 /* LaunchScreen.storyboard */,
+				CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */,
+				CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */,
 			);
 			path = CatchColor;
 			sourceTree = "<group>";
@@ -130,9 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA72B4F12CA030460035CAC3 /* GameScene.sks in Resources */,
-				CA72B4FA2CA030460035CAC3 /* Base in Resources */,
 				CA72B4FC2CA030470035CAC3 /* Assets.xcassets in Resources */,
+				CA72B50A2CA0781B0035CAC3 /* error_sound.mp3 in Resources */,
 				CA72B4F32CA030460035CAC3 /* Actions.sks in Resources */,
+				CA72B5082CA078170035CAC3 /* game_over_sound.mp3 in Resources */,
+				CA72B5062CA078120035CAC3 /* bonus_sound.mp3 in Resources */,
 				CA72B4FF2CA030470035CAC3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,20 +161,14 @@
 				CA72B4F52CA030460035CAC3 /* GameScene.swift in Sources */,
 				CA72B4F72CA030460035CAC3 /* GameViewController.swift in Sources */,
 				CA72B4EF2CA030460035CAC3 /* AppDelegate.swift in Sources */,
+				CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */,
+				CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA72B4F82CA030460035CAC3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA72B4F92CA030460035CAC3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CA72B4FD2CA030470035CAC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -302,7 +310,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -330,7 +337,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
