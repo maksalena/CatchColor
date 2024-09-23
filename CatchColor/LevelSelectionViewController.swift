@@ -10,6 +10,14 @@ import SpriteKit
 
 class LevelSelectionViewController: UIViewController {
     
+    var isSoundEnabled: Bool {
+        set {
+            return UserDefaults.standard.set(newValue, forKey: "isSoundEnabled")
+        } get {
+            UserDefaults.standard.bool(forKey: "isSoundEnabled")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.alpha = 1
@@ -41,7 +49,7 @@ class LevelSelectionViewController: UIViewController {
         let label = UILabel()
         label.text = "To unlock the new level score 100 points"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.font = UIFont(name: "Courier", size: 18)
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -110,7 +118,7 @@ class LevelSelectionViewController: UIViewController {
                 config.titleAlignment = .center
                 config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
-                    outgoing.font = UIFont.boldSystemFont(ofSize: 20)
+                    outgoing.font = UIFont(name: "Courier", size: 20)
                     return outgoing
                 }
                 
@@ -159,7 +167,7 @@ class LevelSelectionViewController: UIViewController {
                 config.titleAlignment = .center
                 config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
-                    outgoing.font = UIFont.boldSystemFont(ofSize: 22)
+                    outgoing.font = UIFont(name: "Courier", size: 22)
                     return outgoing
                 }
                 
@@ -178,6 +186,7 @@ class LevelSelectionViewController: UIViewController {
         guard sender.isEnabled else { return }
         let gameVC = GameViewController()
         gameVC.selectedLevel = sender.tag
+        gameVC.isSoundEnabled = self.isSoundEnabled
         
         navigationController?.pushViewController(gameVC, animated: true)
     }

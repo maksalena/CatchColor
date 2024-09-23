@@ -12,6 +12,7 @@ import GameplayKit
 class GameViewController: UIViewController {
 
     var selectedLevel: Int = 1
+    var isSoundEnabled: Bool = true
 
     override func loadView() {
         self.view = SKView(frame: UIScreen.main.bounds)
@@ -19,13 +20,14 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         if let view = self.view as? SKView {
             let scene = GameScene(size: view.bounds.size)
             scene.gameSceneDelegate = self
             scene.scaleMode = .aspectFill
             scene.selectedLevel = selectedLevel // Передаем выбранный уровень
+            scene.isSoundEnabled = isSoundEnabled // Передаем режим звука
             
             view.presentScene(scene)
             
@@ -50,6 +52,7 @@ class GameViewController: UIViewController {
 
 extension GameViewController: GameSceneDelegate {
     func didPressHomeButton() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.popViewController(animated: true)
     }
 }

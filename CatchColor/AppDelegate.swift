@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set the back button's text attributes (bold and colored)
         appearance.backButtonAppearance.normal.titleTextAttributes = [
-            .font: UIFont.boldSystemFont(ofSize: 17),
+            .font: UIFont(name: "Courier", size: 18),
             .foregroundColor: UIColor.white  // Change this to your desired color
         ]
         

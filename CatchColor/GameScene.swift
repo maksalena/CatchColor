@@ -22,7 +22,13 @@ class GameScene: SKScene {
     
     // Настройки звука
     var audioPlayer: AVAudioPlayer?
-    private var isSoundEnabled: Bool = true
+    var isSoundEnabled: Bool {
+        set {
+            return UserDefaults.standard.set(newValue, forKey: "isSoundEnabled")
+        } get {
+            UserDefaults.standard.bool(forKey: "isSoundEnabled")
+        }
+    }
     
     // Главный шар и массив маленьких шаров
     private var mainBall: SKSpriteNode!
@@ -88,6 +94,7 @@ class GameScene: SKScene {
     private var colorChangeTimer: Timer?
 
     override func didMove(to view: SKView) {
+        isSoundEnabled = UserDefaults.standard.bool(forKey: "isSoundEnabled")
         setupScene()
     }
     
@@ -101,14 +108,14 @@ class GameScene: SKScene {
         addChild(mainBall)
         
         // Счет
-        scoreLabel = SKLabelNode(fontNamed: "Helvetica")
+        scoreLabel = SKLabelNode(fontNamed: "Courier")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.fontSize = 24
         scoreLabel.position = CGPoint(x: size.width - 80, y: size.height - 80)
         addChild(scoreLabel)
         
         // Таймер
-        timerLabel = SKLabelNode(fontNamed: "Helvetica")
+        timerLabel = SKLabelNode(fontNamed: "Courier")
         timerLabel.text = "Time: 0s"
         timerLabel.fontSize = 20
         timerLabel.position = CGPoint(x: size.width - 80, y: size.height - 110)
@@ -334,6 +341,7 @@ class GameScene: SKScene {
         
         // Заголовок меню
         let titleLabel = SKLabelNode(text: "Paused")
+        titleLabel.fontName = "Courier"
         titleLabel.fontSize = 30
         titleLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 60)
         titleLabel.zPosition = 102
@@ -341,6 +349,7 @@ class GameScene: SKScene {
         
         // Лучший счет
         let bestScoreLabel = SKLabelNode(text: "Best score: \(bestScore)")
+        titleLabel.fontName = "Courier"
         bestScoreLabel.fontSize = 24
         bestScoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 30)
         bestScoreLabel.zPosition = 102
@@ -368,14 +377,14 @@ class GameScene: SKScene {
         pauseMenu.addChild(restartButton)
         
         // Кнопка "Выключить звук"
-        soundButton = SKSpriteNode(imageNamed: isSoundEnabled ? "sound_off_icon" : "sound_on_icon")
+        soundButton = SKSpriteNode(imageNamed: isSoundEnabled ? "sound_on_icon" : "sound_off_icon")
         soundButton.size = CGSize(width: buttonWidth, height: buttonHeight)
         soundButton.position = CGPoint(x: size.width / 2 - buttonWidth / 2 - 10, y: size.height / 2 - 60)
         soundButton.name = "soundButton"
         soundButton.zPosition = 102
         pauseMenu.addChild(soundButton)
         
-        // Кнопка "Политика игры"
+        // Кнопка "Уровни игры"
         homeButton = SKSpriteNode(imageNamed: "home_icon")
         homeButton.size = CGSize(width: buttonWidth, height: buttonHeight)
         homeButton.position = CGPoint(x: size.width / 2 + buttonWidth / 2 + 10, y: size.height / 2 - 60)
@@ -398,6 +407,7 @@ class GameScene: SKScene {
         
         // Заголовок меню
         let titleLabel = SKLabelNode(text: "Game Over!")
+        titleLabel.fontName = "Courier"
         titleLabel.fontSize = 30
         titleLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 60)
         titleLabel.zPosition = 102
@@ -405,6 +415,7 @@ class GameScene: SKScene {
         
         // Текущий счет
         let scoreLabel = SKLabelNode(text: "Score: \(score)")
+        scoreLabel.fontName = "Courier"
         scoreLabel.fontSize = 24
         scoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 30)
         scoreLabel.zPosition = 102
@@ -412,6 +423,7 @@ class GameScene: SKScene {
         
         // Лучший счет
         let bestScoreLabel = SKLabelNode(text: "Best score: \(bestScore)")
+        bestScoreLabel.fontName = "Courier"
         bestScoreLabel.fontSize = 24
         bestScoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 2)
         bestScoreLabel.zPosition = 102
@@ -505,7 +517,7 @@ class GameScene: SKScene {
         } else {
             for node in nodesAtPoint {
                 if let ball = node as? SKSpriteNode, ball.name == "smallBall" {
-                    let isCorrectTexture = ball.texture == mainBall.texture && ball.texture != SKTexture(imageNamed: "bomb_ball")
+                    let isCorrectTexture = ball.texture?.description == mainBall.texture?.description
                     updateScore(isCorrect: isCorrectTexture)
                     ball.removeFromParent()
                     break

@@ -37,6 +37,8 @@
 		CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		CA72B50F2CA15E050035CAC3 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
+		CA72B51A2CA1BFBC0035CAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA72B5242CA1C0B40035CAC3 /* mokoto-mokoto-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mokoto-mokoto-regular-400.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		CA72B4ED2CA030460035CAC3 /* CatchColor */ = {
 			isa = PBXGroup;
 			children = (
+				CA72B51A2CA1BFBC0035CAC3 /* Info.plist */,
 				CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */,
 				CA72B5072CA078170035CAC3 /* game_over_sound.mp3 */,
 				CA72B5052CA078120035CAC3 /* bonus_sound.mp3 */,
@@ -82,6 +85,7 @@
 				CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */,
 				CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */,
 				CA72B50F2CA15E050035CAC3 /* LevelManager.swift */,
+				CA72B5242CA1C0B40035CAC3 /* mokoto-mokoto-regular-400.ttf */,
 			);
 			path = CatchColor;
 			sourceTree = "<group>";
@@ -312,6 +316,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8U7D8W8J2D;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatchColor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -339,6 +344,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8U7D8W8J2D;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatchColor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
