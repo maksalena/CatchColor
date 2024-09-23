@@ -29,11 +29,16 @@ class GameScene: SKScene {
     private var smallBalls = [SKSpriteNode]()
     
     // Цвета для игры
-    private let ballTextures: [SKTexture] = [
+    private var ballTextures: [SKTexture] = [
         SKTexture(imageNamed: "blue_ball"),
         SKTexture(imageNamed: "red_ball"),
         SKTexture(imageNamed: "green_ball"),
-        SKTexture(imageNamed: "orange_ball")
+    ]
+    
+    private var mainBallTextures: [SKTexture] = [
+        SKTexture(imageNamed: "blue_ball"),
+        SKTexture(imageNamed: "red_ball"),
+        SKTexture(imageNamed: "green_ball"),
     ]
     
     // Интерфейс: счет, таймер и пауза
@@ -91,7 +96,7 @@ class GameScene: SKScene {
         setupBackground()
         
         // Главный шар
-        mainBall = SKSpriteNode(texture: ballTextures.randomElement()!, size: CGSize(width: 125, height: 125)) // Случайная текстура из массива
+        mainBall = SKSpriteNode(texture: mainBallTextures.randomElement()!, size: CGSize(width: 125, height: 125)) // Случайная текстура из массива
         mainBall.position = CGPoint(x: size.width / 2, y: size.height * 0.8)
         addChild(mainBall)
         
@@ -129,6 +134,7 @@ class GameScene: SKScene {
 // MARK: - Game Cycle
     
     func startGame() {
+        setupLevels()
         currentWaitDuration = 1.0
         isGamePaused = false
         playButton.isHidden = true
@@ -208,6 +214,28 @@ class GameScene: SKScene {
 
 // MARK: - Game Functions
     
+    func setupLevels() {
+        guard let level = selectedLevel else { return }
+        
+        if level > 3 {
+            ballTextures.append(SKTexture(imageNamed: "pink_ball"))
+            ballTextures.append(SKTexture(imageNamed: "orange_ball"))
+            mainBallTextures.append(SKTexture(imageNamed: "pink_ball"))
+            mainBallTextures.append(SKTexture(imageNamed: "orange_ball"))
+        }
+        
+        if level > 9 {
+            ballTextures.append(SKTexture(imageNamed: "bomb_ball"))
+        }
+    }
+    
+    func addFlashingEffect(to ball: SKSpriteNode) {
+        let fadeOut = SKAction.fadeAlpha(to: 0.2, duration: 1)
+        let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: 1)
+        let flashingSequence = SKAction.sequence([fadeOut, fadeIn])
+        ball.run(SKAction.repeatForever(flashingSequence))
+    }
+    
     func startColorChangeTimer() {
         let interval = TimeInterval(Int.random(in: 3...5))
         
@@ -216,7 +244,7 @@ class GameScene: SKScene {
             
             // Проверяем, если игра не на паузе, меняем цвет и запускаем таймер снова
             if !self.isGamePaused {
-                let newTexture = self.ballTextures.randomElement()! // Случайная текстура для нового главного шара
+                let newTexture = self.mainBallTextures.randomElement()! // Случайная текстура для нового главного шара
                 self.mainBall.texture = newTexture // Меняем текстуру главного шара
                 self.startColorChangeTimer() // Перезапуск таймера, только если игра не на паузе
             }
@@ -229,7 +257,7 @@ class GameScene: SKScene {
             
             // Уменьшаем время ожидания, но не ниже минимального значения
             if let self = self {
-                self.currentWaitDuration = max(self.minimumWaitDuration, self.currentWaitDuration - self.waitDecrement)
+                self.currentWaitDuration = max(self.minimumWaitDuration, currentWaitDuration - waitDecrement)
             }
         }
 
@@ -254,6 +282,10 @@ class GameScene: SKScene {
         ball.name = "smallBall"
         addChild(ball)
         smallBalls.append(ball)
+        
+        if let level = selectedLevel, level > 6 && Bool.random() {
+            addFlashingEffect(to: ball)
+        }
         
         let moveAction = SKAction.moveTo(y: 0, duration: 5.0)
         let removeAction = SKAction.removeFromParent()
@@ -473,7 +505,7 @@ class GameScene: SKScene {
         } else {
             for node in nodesAtPoint {
                 if let ball = node as? SKSpriteNode, ball.name == "smallBall" {
-                    let isCorrectTexture = ball.texture == mainBall.texture
+                    let isCorrectTexture = ball.texture == mainBall.texture && ball.texture != SKTexture(imageNamed: "bomb_ball")
                     updateScore(isCorrect: isCorrectTexture)
                     ball.removeFromParent()
                     break
