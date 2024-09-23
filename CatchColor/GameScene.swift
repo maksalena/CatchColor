@@ -9,11 +9,16 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
+protocol GameSceneDelegate: AnyObject {
+    func didPressHomeButton()
+}
+
 class GameScene: SKScene {
     
 // MARK: - Private Variables
     
     var selectedLevel: Int?
+    weak var gameSceneDelegate: GameSceneDelegate?
     
     // Настройки звука
     var audioPlayer: AVAudioPlayer?
@@ -186,6 +191,11 @@ class GameScene: SKScene {
         if isSoundEnabled { playSound(forResult: true) }
         if score > bestScore {
             bestScore = score
+        }
+        
+        let currentLevel = LevelManager.loadHighestLevel()
+        if score > 100 && currentLevel < 12 {
+            LevelManager.saveHighestLevel(currentLevel + 1) // Разблокировать новый уровень
         }
         
         isGamePaused = true
@@ -439,8 +449,8 @@ class GameScene: SKScene {
     }
     
     func showLevels() {
-        // Логика для отображения политики игры
-        print("Show game levels")
+        // Сообщаем GameViewController перейти на страницу с уровнями
+        gameSceneDelegate?.didPressHomeButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

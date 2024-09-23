@@ -19,6 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navigationController = UINavigationController(rootViewController: startScreenVC)
         
+        // Customize the back button appearance for the entire UINavigationBar
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        
+        // Set the back button's text attributes (bold and colored)
+        appearance.backButtonAppearance.normal.titleTextAttributes = [
+            .font: UIFont.boldSystemFont(ofSize: 17),
+            .foregroundColor: UIColor.white  // Change this to your desired color
+        ]
+        
+        // Apply the appearance to the navigation bar
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.tintColor = .white
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

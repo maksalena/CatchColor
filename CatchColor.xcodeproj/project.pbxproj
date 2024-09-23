@@ -19,6 +19,7 @@
 		CA72B50A2CA0781B0035CAC3 /* error_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */; };
 		CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */; };
 		CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */; };
+		CA72B5102CA15E050035CAC3 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50F2CA15E050035CAC3 /* LevelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = error_sound.mp3; path = ../../../Downloads/error_sound.mp3; sourceTree = "<group>"; };
 		CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
+		CA72B50F2CA15E050035CAC3 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				CA72B4FD2CA030470035CAC3 /* LaunchScreen.storyboard */,
 				CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */,
 				CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */,
+				CA72B50F2CA15E050035CAC3 /* LevelManager.swift */,
 			);
 			path = CatchColor;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				CA72B4F72CA030460035CAC3 /* GameViewController.swift in Sources */,
 				CA72B4EF2CA030460035CAC3 /* AppDelegate.swift in Sources */,
 				CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */,
+				CA72B5102CA15E050035CAC3 /* LevelManager.swift in Sources */,
 				CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

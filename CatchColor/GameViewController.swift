@@ -11,18 +11,22 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
-    var selectedLevel: Int = 1  // Default to level 1
+    var selectedLevel: Int = 1
 
+    override func loadView() {
+        self.view = SKView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let view = self.view as! SKView? {
-            // Create the GameScene and pass the selected level to it
+        self.navigationController?.navigationBar.isHidden = true
+        
+        if let view = self.view as? SKView {
             let scene = GameScene(size: view.bounds.size)
+            scene.gameSceneDelegate = self
             scene.scaleMode = .aspectFill
-            scene.selectedLevel = selectedLevel // Pass the selected level
-
-            // Present the scene
+            scene.selectedLevel = selectedLevel // Передаем выбранный уровень
+            
             view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
@@ -41,5 +45,11 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension GameViewController: GameSceneDelegate {
+    func didPressHomeButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
