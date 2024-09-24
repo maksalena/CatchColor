@@ -80,6 +80,7 @@ class GameScene: SKScene {
     private var gameTimer: Timer?
     private var elapsedTime: TimeInterval = 1
     private var gameStartTime: TimeInterval?
+    private var pausedTime: TimeInterval = 0
     
     // Переменные для ускорения появления шаров
     private var currentWaitDuration: TimeInterval = 1.0
@@ -143,6 +144,7 @@ class GameScene: SKScene {
     func startGame() {
         setupLevels()
         currentWaitDuration = 1.0
+        pausedTime = 0
         isGamePaused = false
         playButton.isHidden = true
         pauseButton.isHidden = false
@@ -154,12 +156,12 @@ class GameScene: SKScene {
     }
 
     func startGameTimer() {
-        gameStartTime = CACurrentMediaTime()
+        gameStartTime = CACurrentMediaTime() - pausedTime
         gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             self?.updateGameTime()
         }
     }
-
+    
     func updateGameTime() {
         guard let startTime = gameStartTime else { return }
         elapsedTime = CACurrentMediaTime() - startTime
@@ -168,6 +170,7 @@ class GameScene: SKScene {
 
     func pauseGame() {
         isGamePaused = true // Устанавливаем состояние паузы
+        pausedTime = elapsedTime
         gameTimer?.invalidate()
         colorChangeTimer?.invalidate() // Останавливаем таймер смены цвета
         physicsWorld.speed = 0 // Останавливаем физику

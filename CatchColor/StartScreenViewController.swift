@@ -21,6 +21,7 @@ class StartScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    print("ssc")
         
     }
     
