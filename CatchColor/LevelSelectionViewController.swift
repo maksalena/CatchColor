@@ -38,6 +38,7 @@ class LevelSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
         // Set default value for highest level if it doesn't exist
         if UserDefaults.standard.integer(forKey: "highestLevel") == 0 {
@@ -49,7 +50,7 @@ class LevelSelectionViewController: UIViewController {
         let label = UILabel()
         label.text = "To unlock the new level score 100 points"
         label.textAlignment = .center
-        label.font = UIFont(name: "Courier", size: 18)
+        label.font = UIFont(name: "Courier-Bold", size: 18)
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -118,7 +119,7 @@ class LevelSelectionViewController: UIViewController {
                 config.titleAlignment = .center
                 config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
-                    outgoing.font = UIFont(name: "Courier", size: 20)
+                    outgoing.font = UIFont(name: "Courier-Bold", size: 20)
                     return outgoing
                 }
                 
@@ -167,7 +168,7 @@ class LevelSelectionViewController: UIViewController {
                 config.titleAlignment = .center
                 config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                     var outgoing = incoming
-                    outgoing.font = UIFont(name: "Courier", size: 22)
+                    outgoing.font = UIFont(name: "Courier-Bold", size: 22)
                     return outgoing
                 }
                 

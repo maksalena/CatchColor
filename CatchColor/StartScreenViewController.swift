@@ -27,6 +27,7 @@ class StartScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
         setupUI()
     }
 
@@ -55,39 +56,45 @@ class StartScreenViewController: UIViewController {
         // Constraints for title label
         NSLayoutConstraint.activate([
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            logoImage.widthAnchor.constraint(equalToConstant: 400),
-            logoImage.heightAnchor.constraint(equalToConstant: 400)
+            logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            logoImage.widthAnchor.constraint(equalToConstant: 300),
+            logoImage.heightAnchor.constraint(equalToConstant: 150)
         ])
 
         // Add start button
-        let startButton = UIButton(type: .custom)
-        startButton.setImage(UIImage(named: "main_start"), for: .normal)
+        let startButton = UIButton()
+        startButton.setBackgroundImage(UIImage(named: "main_start"), for: .normal)
         startButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.setTitle("Start", for: .normal)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.titleLabel?.font = UIFont(name: "Courier-Bold", size: 32)
         startButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
         view.addSubview(startButton)
 
         // Constraints for start button
         NSLayoutConstraint.activate([
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: -10),
-            startButton.widthAnchor.constraint(equalToConstant: 150),
-            startButton.heightAnchor.constraint(equalToConstant: 150)
+            startButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 60),
+            startButton.widthAnchor.constraint(equalToConstant: 200),
+            startButton.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         // Add menu button below the start button
-        let menuButton = UIButton(type: .custom)
-        menuButton.setImage(UIImage(named: "menu_icon"), for: .normal)
+        let menuButton = UIButton()
+        menuButton.setBackgroundImage(UIImage(named: "menu_icon"), for: .normal)
         menuButton.translatesAutoresizingMaskIntoConstraints = false
+        menuButton.setTitle("Settings", for: .normal)
+        menuButton.setTitleColor(.white, for: .normal)
+        menuButton.titleLabel?.font = UIFont(name: "Courier-Bold", size: 32)
         menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
         view.addSubview(menuButton)
         
         // Constraints for menu button
         NSLayoutConstraint.activate([
             menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            menuButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: -55),
-            menuButton.widthAnchor.constraint(equalToConstant: 150),
-            menuButton.heightAnchor.constraint(equalToConstant: 150)
+            menuButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 30),
+            menuButton.widthAnchor.constraint(equalToConstant: 200),
+            menuButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 
@@ -115,8 +122,6 @@ class StartScreenViewController: UIViewController {
         // Add the "pause-background" image
         let pauseBackgroundImageView = UIImageView(image: UIImage(named: "pause-background"))
         pauseBackgroundImageView.contentMode = .scaleAspectFill
-        pauseBackgroundImageView.clipsToBounds = true
-        pauseBackgroundImageView.layer.cornerRadius = 20
         pauseBackgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         overlayView.addSubview(pauseBackgroundImageView)
         
@@ -124,7 +129,7 @@ class StartScreenViewController: UIViewController {
         NSLayoutConstraint.activate([
             pauseBackgroundImageView.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
             pauseBackgroundImageView.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor),
-            pauseBackgroundImageView.widthAnchor.constraint(equalToConstant: 250),
+            pauseBackgroundImageView.widthAnchor.constraint(equalToConstant: 230),
             pauseBackgroundImageView.heightAnchor.constraint(equalToConstant: 250)
         ])
         
@@ -152,14 +157,17 @@ class StartScreenViewController: UIViewController {
         // Constraints for sound button
         NSLayoutConstraint.activate([
             soundButton.centerXAnchor.constraint(equalTo: pauseBackgroundImageView.centerXAnchor),
-            soundButton.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 40),
+            soundButton.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 30),
             soundButton.widthAnchor.constraint(equalToConstant: 50),
             soundButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        let okButton = UIButton(type: .custom)
-        okButton.setImage(UIImage(named: "ok_icon"), for: .normal)
+        let okButton = UIButton()
+        okButton.setBackgroundImage(UIImage(named: "ok_icon"), for: .normal)
         okButton.translatesAutoresizingMaskIntoConstraints = false
+        okButton.setTitle("OK", for: .normal)
+        okButton.setTitleColor(.white, for: .normal)
+        okButton.titleLabel?.font = UIFont(name: "Courier", size: 20)
         okButton.addTarget(self, action: #selector(dismissMenu), for: .touchUpInside)
         overlayView.addSubview(okButton)
         

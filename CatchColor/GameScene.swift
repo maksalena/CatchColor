@@ -104,21 +104,21 @@ class GameScene: SKScene {
         
         // Главный шар
         mainBall = SKSpriteNode(texture: mainBallTextures.randomElement()!, size: CGSize(width: 125, height: 125)) // Случайная текстура из массива
-        mainBall.position = CGPoint(x: size.width / 2, y: size.height * 0.8)
+        mainBall.position = CGPoint(x: size.width / 2, y: size.height * 0.7)
         addChild(mainBall)
         
         // Счет
-        scoreLabel = SKLabelNode(fontNamed: "Courier")
+        scoreLabel = SKLabelNode(fontNamed: "Courier-Bold")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.fontSize = 24
-        scoreLabel.position = CGPoint(x: size.width - 80, y: size.height - 80)
+        scoreLabel.position = CGPoint(x: size.width - 85, y: size.height - 80)
         addChild(scoreLabel)
         
         // Таймер
         timerLabel = SKLabelNode(fontNamed: "Courier")
         timerLabel.text = "Time: 0s"
         timerLabel.fontSize = 20
-        timerLabel.position = CGPoint(x: size.width - 80, y: size.height - 110)
+        timerLabel.position = CGPoint(x: size.width - 85, y: size.height - 110)
         addChild(timerLabel)
         
         // Кнопка паузы
@@ -146,6 +146,7 @@ class GameScene: SKScene {
         isGamePaused = false
         playButton.isHidden = true
         pauseButton.isHidden = false
+        pauseMenu.isHidden = true
         startGameTimer()
         startColorChangeTimer() // Таймер смены цвета главного шара
         renderHearts()
@@ -176,6 +177,7 @@ class GameScene: SKScene {
     }
     
     func resumeGame() {
+        guard !hearts.isEmpty else { startGame(); return }
         isGamePaused = false // Возвращаемся в состояние игры
         physicsWorld.speed = 1
         startGameTimer()
@@ -334,7 +336,7 @@ class GameScene: SKScene {
         pauseMenu.isHidden = true
         
         // Фон меню паузы (белый прямоугольник)
-        let menuBackground = SKSpriteNode(texture: SKTexture(imageNamed: "pause-background"), size: CGSize(width: size.width * 0.6, height: size.height * 0.3))
+        let menuBackground = SKSpriteNode(texture: SKTexture(imageNamed: "pause-background"), size: CGSize(width: size.width * 0.8, height: size.height * 0.36))
         menuBackground.position = CGPoint(x: size.width / 2, y: size.height / 2)
         menuBackground.zPosition = 101
         pauseMenu.addChild(menuBackground)
@@ -350,7 +352,7 @@ class GameScene: SKScene {
         // Лучший счет
         let bestScoreLabel = SKLabelNode(text: "Best score: \(bestScore)")
         titleLabel.fontName = "Courier"
-        bestScoreLabel.fontSize = 24
+        bestScoreLabel.fontSize = 26
         bestScoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 30)
         bestScoreLabel.zPosition = 102
         pauseMenu.addChild(bestScoreLabel)
@@ -400,14 +402,14 @@ class GameScene: SKScene {
         let gameOverMenu = SKNode()
         
         // Фон меню
-        let menuBackground = SKSpriteNode(texture: SKTexture(imageNamed: "pause-background"), size: CGSize(width: size.width * 0.6, height: size.height * 0.3))
+        let menuBackground = SKSpriteNode(texture: SKTexture(imageNamed: "pause-background"), size: CGSize(width: size.width * 0.8, height: size.height * 0.36))
         menuBackground.position = CGPoint(x: size.width / 2, y: size.height / 2)
         menuBackground.zPosition = 101
         gameOverMenu.addChild(menuBackground)
         
         // Заголовок меню
         let titleLabel = SKLabelNode(text: "Game Over!")
-        titleLabel.fontName = "Courier"
+        titleLabel.fontName = "Courier-Bold"
         titleLabel.fontSize = 30
         titleLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 60)
         titleLabel.zPosition = 102
@@ -424,7 +426,7 @@ class GameScene: SKScene {
         // Лучший счет
         let bestScoreLabel = SKLabelNode(text: "Best score: \(bestScore)")
         bestScoreLabel.fontName = "Courier"
-        bestScoreLabel.fontSize = 24
+        bestScoreLabel.fontSize = 26
         bestScoreLabel.position = CGPoint(x: size.width / 2, y: size.height / 2)
         bestScoreLabel.zPosition = 102
         gameOverMenu.addChild(bestScoreLabel)

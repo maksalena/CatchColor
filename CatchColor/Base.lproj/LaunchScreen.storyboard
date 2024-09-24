@@ -18,14 +18,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="uAf-l3-PQg">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WpK-nz-3mR">
-                                <rect key="frame" x="-8" y="255" width="408" height="342"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WpK-nz-3mR">
+                                <rect key="frame" x="46.666666666666657" y="351" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="DOH-aG-Jcp"/>
+                                    <constraint firstAttribute="height" constant="150" id="iDA-qP-PE2"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
+                            <constraint firstItem="WpK-nz-3mR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BQE-Me-dvi"/>
                             <constraint firstItem="uAf-l3-PQg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="YiL-n4-r26"/>
+                            <constraint firstItem="WpK-nz-3mR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="d27-rt-ADI"/>
                             <constraint firstItem="uAf-l3-PQg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fur-22-Ydy"/>
                             <constraint firstAttribute="bottom" secondItem="uAf-l3-PQg" secondAttribute="bottom" id="ih0-up-l9a"/>
                             <constraint firstItem="uAf-l3-PQg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ymb-2A-pvn"/>
@@ -38,7 +43,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1200" height="1604"/>
-        <image name="logo" width="1024" height="1024"/>
+        <image name="background" width="1242" height="2688"/>
+        <image name="logo" width="1552" height="784"/>
     </resources>
 </document>

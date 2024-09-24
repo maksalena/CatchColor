@@ -20,6 +20,10 @@
 		CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */; };
 		CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */; };
 		CA72B5102CA15E050035CAC3 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B50F2CA15E050035CAC3 /* LevelManager.swift */; };
+		CA72B5272CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA72B5262CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic */; };
+		CA72B5292CA2F0ED0035CAC3 /* ConfigDbConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B5282CA2F0ED0035CAC3 /* ConfigDbConnector.swift */; };
+		CA72B52B2CA2F1390035CAC3 /* UpdateLevelsOnOldVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B52A2CA2F1390035CAC3 /* UpdateLevelsOnOldVersion.swift */; };
+		CA72B52D2CA2F1790035CAC3 /* LevelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA72B52C2CA2F1790035CAC3 /* LevelDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +42,9 @@
 		CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
 		CA72B50F2CA15E050035CAC3 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		CA72B51A2CA1BFBC0035CAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CA72B5242CA1C0B40035CAC3 /* mokoto-mokoto-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mokoto-mokoto-regular-400.ttf"; sourceTree = "<group>"; };
+		CA72B5282CA2F0ED0035CAC3 /* ConfigDbConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigDbConnector.swift; path = ../../../Downloads/WebViewSwift/ConfigDbConnector.swift; sourceTree = "<group>"; };
+		CA72B52A2CA2F1390035CAC3 /* UpdateLevelsOnOldVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateLevelsOnOldVersion.swift; path = ../../../Downloads/WebViewSwift/UpdateLevelsOnOldVersion.swift; sourceTree = "<group>"; };
+		CA72B52C2CA2F1790035CAC3 /* LevelDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelDownloader.swift; path = ../../../Downloads/WebViewSwift/LevelDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA72B5272CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +78,9 @@
 		CA72B4ED2CA030460035CAC3 /* CatchColor */ = {
 			isa = PBXGroup;
 			children = (
+				CA72B52C2CA2F1790035CAC3 /* LevelDownloader.swift */,
+				CA72B52A2CA2F1390035CAC3 /* UpdateLevelsOnOldVersion.swift */,
+				CA72B5282CA2F0ED0035CAC3 /* ConfigDbConnector.swift */,
 				CA72B51A2CA1BFBC0035CAC3 /* Info.plist */,
 				CA72B5092CA0781B0035CAC3 /* error_sound.mp3 */,
 				CA72B5072CA078170035CAC3 /* game_over_sound.mp3 */,
@@ -85,7 +95,6 @@
 				CA72B50B2CA0D3810035CAC3 /* StartScreenViewController.swift */,
 				CA72B50D2CA0D42D0035CAC3 /* LevelSelectionViewController.swift */,
 				CA72B50F2CA15E050035CAC3 /* LevelManager.swift */,
-				CA72B5242CA1C0B40035CAC3 /* mokoto-mokoto-regular-400.ttf */,
 			);
 			path = CatchColor;
 			sourceTree = "<group>";
@@ -106,6 +115,9 @@
 			dependencies = (
 			);
 			name = CatchColor;
+			packageProductDependencies = (
+				CA72B5262CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic */,
+			);
 			productName = CatchColor;
 			productReference = CA72B4EB2CA030460035CAC3 /* CatchColor.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +146,9 @@
 				Base,
 			);
 			mainGroup = CA72B4E22CA030460035CAC3;
+			packageReferences = (
+				CA72B5252CA2EFBF0035CAC3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */,
+			);
 			productRefGroup = CA72B4EC2CA030460035CAC3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,11 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA72B4F52CA030460035CAC3 /* GameScene.swift in Sources */,
+				CA72B52B2CA2F1390035CAC3 /* UpdateLevelsOnOldVersion.swift in Sources */,
 				CA72B4F72CA030460035CAC3 /* GameViewController.swift in Sources */,
+				CA72B52D2CA2F1790035CAC3 /* LevelDownloader.swift in Sources */,
 				CA72B4EF2CA030460035CAC3 /* AppDelegate.swift in Sources */,
 				CA72B50C2CA0D3810035CAC3 /* StartScreenViewController.swift in Sources */,
 				CA72B5102CA15E050035CAC3 /* LevelManager.swift in Sources */,
 				CA72B50E2CA0D42D0035CAC3 /* LevelSelectionViewController.swift in Sources */,
+				CA72B5292CA2F0ED0035CAC3 /* ConfigDbConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,21 +335,24 @@
 				DEVELOPMENT_TEAM = 8U7D8W8J2D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatchColor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Flino Forces";
+				INFOPLIST_KEY_LSApplicationCategoryType = NSUserTargetUsageDescription;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This app tracks your IDFA (Identifier for Advertisers) and transmits it to Appsflyer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = maksimova.CatchColor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinof.orces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -345,21 +366,24 @@
 				DEVELOPMENT_TEAM = 8U7D8W8J2D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatchColor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Flino Forces";
+				INFOPLIST_KEY_LSApplicationCategoryType = NSUserTargetUsageDescription;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This app tracks your IDFA (Identifier for Advertisers) and transmits it to Appsflyer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = maksimova.CatchColor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinof.orces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -385,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA72B5252CA2EFBF0035CAC3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA72B5262CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA72B5252CA2EFBF0035CAC3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */;
+			productName = "AppsFlyerLib-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA72B4E32CA030460035CAC3 /* Project object */;
 }
