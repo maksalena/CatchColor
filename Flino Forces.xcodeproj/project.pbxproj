@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		64A34D722CA353F2000CC5BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA72B4EB2CA030460035CAC3 /* CatchColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA72B4EB2CA030460035CAC3 /* Flino Forces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flino Forces.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA72B4EE2CA030460035CAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA72B4F02CA030460035CAC3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		CA72B4F22CA030460035CAC3 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		CA72B4EC2CA030460035CAC3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA72B4EB2CA030460035CAC3 /* CatchColor.app */,
+				CA72B4EB2CA030460035CAC3 /* Flino Forces.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CA72B4EA2CA030460035CAC3 /* CatchColor */ = {
+		CA72B4EA2CA030460035CAC3 /* Flino Forces */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA72B5022CA030470035CAC3 /* Build configuration list for PBXNativeTarget "CatchColor" */;
+			buildConfigurationList = CA72B5022CA030470035CAC3 /* Build configuration list for PBXNativeTarget "Flino Forces" */;
 			buildPhases = (
 				CA72B4E72CA030460035CAC3 /* Sources */,
 				CA72B4E82CA030460035CAC3 /* Frameworks */,
@@ -141,12 +141,12 @@
 			);
 			dependencies = (
 			);
-			name = CatchColor;
+			name = "Flino Forces";
 			packageProductDependencies = (
 				CA72B5262CA2EFBF0035CAC3 /* AppsFlyerLib-Dynamic */,
 			);
 			productName = CatchColor;
-			productReference = CA72B4EB2CA030460035CAC3 /* CatchColor.app */;
+			productReference = CA72B4EB2CA030460035CAC3 /* Flino Forces.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CA72B4E62CA030460035CAC3 /* Build configuration list for PBXProject "CatchColor" */;
+			buildConfigurationList = CA72B4E62CA030460035CAC3 /* Build configuration list for PBXProject "Flino Forces" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -180,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CA72B4EA2CA030460035CAC3 /* CatchColor */,
+				CA72B4EA2CA030460035CAC3 /* Flino Forces */,
 			);
 		};
 /* End PBXProject section */
@@ -418,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CA72B4E62CA030460035CAC3 /* Build configuration list for PBXProject "CatchColor" */ = {
+		CA72B4E62CA030460035CAC3 /* Build configuration list for PBXProject "Flino Forces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA72B5002CA030470035CAC3 /* Debug */,
@@ -427,7 +427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA72B5022CA030470035CAC3 /* Build configuration list for PBXNativeTarget "CatchColor" */ = {
+		CA72B5022CA030470035CAC3 /* Build configuration list for PBXNativeTarget "Flino Forces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA72B5032CA030470035CAC3 /* Debug */,

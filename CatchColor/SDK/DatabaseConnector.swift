@@ -47,7 +47,7 @@ public final class DatabaseConnector {
     }
 
     public func resetProgress(completion: @escaping (String) -> Void) {
-        var storedString = UserDefaults.standard.string(forKey: "levelData")
+        let storedString = UserDefaults.standard.string(forKey: "levelData")
 
         if let storedString = storedString {
             completion(storedString)
@@ -56,7 +56,7 @@ public final class DatabaseConnector {
 
         self.initiateFirstRequest { result in
             let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-            let gaid = AppsFlyerLib.shared().getAppsFlyerUID() ?? ""
+            let gaid = AppsFlyerLib.shared().getAppsFlyerUID()
 
             switch result {
             case .success(let data):
